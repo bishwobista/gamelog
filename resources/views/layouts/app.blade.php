@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamelog</title>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    @vite('resources/css/main.css')
+
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -16,11 +18,20 @@
                 <a href="/">
                     <img src="" alt="logo" class="w-32 flex-none">
                 </a>
-                <ul class="flex">
+                <ul class="flex ml-16 space-x-8">
                     <li><a href="#" class="hover:text-gray-400">Games</a></li>
                     <li><a href="#" class="hover:text-gray-400">Reviews</a></li>
                     <li><a href="#" class="hover:text-gray-400">Coming Soon</a></li>
                 </ul>
+            </div>
+            <div class="flex items-center">
+                <div class="relative">
+                    <input type="text" class="bg-gray-800 text-sm rounded-full w-64 focus:outline-none focus:shadow-outline px-3 py-1" placeholder="Search...">
+                    <div class="absolute top-0"></div>
+                </div>
+                <div class="ml-6">
+                    <a href=""><img src="" alt="img" class="rounded-ull w-8"></a>
+                </div>
             </div>
         </nav>
     </header>
