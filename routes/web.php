@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/', function () {
+Route::get('/show', function () {
     return view('show');
 });
