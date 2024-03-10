@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class GamesController extends Controller
 {
@@ -11,10 +12,17 @@ class GamesController extends Controller
      */
     public function index()
     {
+
         $popularGames = Http::withHeaders([
-            'user-key' => '',
-        ])->post('http://example.com/users', [
-            'name' => 'Taylor',
+            'Client-ID' => env('IGDB_CLIENT_ID'),
+            'Authorization' => 'Bearer ' . getAuthorization()
+        ])->withOptions([
+            'body' => "fields *;"
+        ])->post('https://api.igdb.com/v4/games')->json();
+        dd($popularGames);
+
+        return view('index', [
+            'popularGames'
         ]);
     }
 
