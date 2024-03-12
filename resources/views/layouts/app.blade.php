@@ -8,7 +8,7 @@
 
     <link href="/css/main.css" rel="stylesheet">
     @vite('resources/css/main.css')
-
+    @livewireStyles
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -47,6 +47,8 @@
             Powered By <a href="#" class="underline hover:text-gray-400">IGDB API</a>
         </div>
     </footer>
+    @livewireScriptConfig 
+
 </body>
 
 </html>
